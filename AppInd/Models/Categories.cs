@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace AppInd.Models
 {
@@ -7,8 +8,9 @@ namespace AppInd.Models
         [Key]
         public int Id { get; set; }
         [Required]
+        [DisplayName("Nom du Categorie")]
         public string Name { get; set; }
-
+        [DisplayName("Ordre du Categorie")]
         public int DisplayOrder { get; set; }
     }
 }
