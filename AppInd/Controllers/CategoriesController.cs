@@ -1,4 +1,5 @@
 ﻿using AppInd.Data;
+using AppInd.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AppInd.Controllers
@@ -18,6 +19,13 @@ namespace AppInd.Controllers
         public IActionResult Create()
         {
             return View();
+        }
+        [HttpPost]
+        public IActionResult Create(Categories obj)
+        {
+            _db.Categoriess.Add(obj);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
